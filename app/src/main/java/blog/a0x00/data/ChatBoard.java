@@ -95,10 +95,11 @@ public class ChatBoard extends AppCompatActivity  {
         }
         mic=(FloatingActionButton)findViewById(R.id.floatingActionButton);
         mic.bringToFront();
-        final AIConfiguration config = new AIConfiguration("f15dca0cd89241c4977a74523621607e",
+        
+        final AIConfiguration config = new AIConfiguration("client_access_token",
                 AIConfiguration.SupportedLanguages.English,
                 AIConfiguration.RecognitionEngine.System);
-
+        
         final ai.api.AIDataService aiDataService = new ai.api.AIDataService(config);
 
         Bitmap botIcon= BitmapFactory. decodeResource(getResources(),R.drawable.bot);
@@ -244,7 +245,7 @@ public class ChatBoard extends AppCompatActivity  {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        final AIConfiguration config = new AIConfiguration("f15dca0cd89241c4977a74523621607e",
+        final AIConfiguration config = new AIConfiguration("client_access_token",
                 AIConfiguration.SupportedLanguages.English,
                 AIConfiguration.RecognitionEngine.System);
         final ai.api.AIDataService aiDataService = new ai.api.AIDataService(config);
